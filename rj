@@ -1,0 +1,15 @@
+-- Universal Rejoin Script (Client-Side)
+
+local teleportService = game:GetService("TeleportService")
+local player = game.Players.LocalPlayer
+local currentPlaceId = game.PlaceId -- Get the current place the player is in
+
+-- Function to rejoin the game
+local function rejoinGame()
+    teleportService:Teleport(currentPlaceId, player) -- Teleports the player to the same place, effectively rejoining
+end
+
+-- You can bind this function to a specific event, like a button press or timer
+-- For example, here we automatically rejoin after 5 seconds
+wait(0) -- Delay for 5 seconds before rejoining
+rejoinGame()
